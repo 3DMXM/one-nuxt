@@ -1,0 +1,34 @@
+{
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev --port=3002",
+        "devPan": "npx nuxi dev --port=3003 --dotenv .env.pan",
+        "devGame": "npx nuxi dev --port=3004 --dotenv .env.game",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "devDependencies": {
+        "@types/marked": "^4.0.8",
+        "@types/mysql": "^2.15.21",
+        "@types/nprogress": "^0.2.0",
+        "@types/request": "^2.48.8",
+        "less": "^4.1.3",
+        "nuxt": "^3.2.0",
+        "nuxt-og-image": "^1.4.19",
+        "nuxt-seo-kit": "^1.2.3"
+    },
+    "dependencies": {
+        "@mdi/font": "^7.1.96",
+        "@pinia/nuxt": "^0.4.6",
+        "axios": "^1.3.3",
+        "github-markdown-css": "^5.2.0",
+        "marked": "^4.2.12",
+        "mysql": "^2.18.1",
+        "nprogress": "^0.2.0",
+        "pinia": "^2.0.30",
+        "request": "^2.88.2",
+        "vuetify": "^3.1.4"
+    }
+}
