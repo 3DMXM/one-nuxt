@@ -1,14 +1,24 @@
 
 // console.log(process.env);
 
+// console.log(process.env.site_siteName, process.env.onedrive_root);
+
 
 export let SeverConfig = {
     MySqlConfig: {
-        host: process.env.mysql_host,
-        user: process.env.mysql_user,
-        password: process.env.mysql_password,
-        database: process.env.mysql_database,
-        timezone: process.env.mysql_timezone,
+        "pan": {
+            host: '127.0.0.1',
+            user: 'pan',
+            password: '123456',
+            database: 'pan',
+        },
+        "game": {
+            host: '127.0.0.1',
+            user: 'game',
+            password: '123456',
+            database: 'game',
+        }
+
     },
     token: {
         // scopes:'Files.ReadWrite.All profile openid email',      // 请求的范围
@@ -21,6 +31,7 @@ export let SeverConfig = {
         refreshToken: "",
         expiresOn: 0,
     },
-    configName: "pan" as 'pan' | 'game',
-    onedrive_root: process.env.onedrive_root || '/public'
+    configName: (process?.env?.config_Name || 'pan') as 'pan' | 'game',
+    siteName: process?.env?.site_siteName || '小莫的云网盘',
+    onedrive_root: process?.env?.onedrive_root || '/public',
 }

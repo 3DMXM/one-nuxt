@@ -72,13 +72,13 @@ function file_path(name: string) {
 
 </script>
 <template>
-    <v-list-item :prepend-icon="icon" :title="item.file_name" :subtitle="`${item.file_up_time} ${size}`">
+    <v-list-item :prepend-icon="icon" :title="item.file_name" :subtitle="`${item.file_up_time} ${size}`" class="item">
         <template v-slot:append>
             <v-btn variant="text" v-if="item.file_type == 'folder'" :loading="Loading" @click="Loading = true"
                 append-icon="mdi-folder-open-outline" :to="file_path(item.file_name)">
                 打开
             </v-btn>
-            <v-btn variant="text" v-else :loading="Loading" @click="Loading=true" append-icon="mdi-download"
+            <v-btn variant="text" v-else :loading="Loading" @click="Loading = true" append-icon="mdi-download"
                 color="#4FC3F7" :href="item.file_downloadUrl" target="_blank">下载</v-btn>
         </template>
     </v-list-item>
@@ -90,5 +90,13 @@ export default {
 }
 </script>
 <style lang='less' scoped>
+.item {
+    // 0.5s 动画
+    transition: background-color 0.3s;
 
+
+    &:hover {
+        background-color: rgba(255, 255, 255, .1);
+    }
+}
 </style>

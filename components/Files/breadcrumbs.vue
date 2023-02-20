@@ -1,16 +1,14 @@
 <script lang='ts' setup>
 
+
 const route = useRoute()
 let path = computed(() => route.params.path as string[])
 
-const config = useRuntimeConfig()
-
-// console.log(config);
 
 
 let item = computed(() => {
     let items = [{
-        title: config.public.siteName,
+        title: "首页",
         to: '/'
     }]
     for (let i = 0; i < path.value.length; i++) {
@@ -33,7 +31,6 @@ let item = computed(() => {
             <v-icon size="small" icon="mdi-home"></v-icon>
         </template>
     </v-breadcrumbs>
-
 </template>
 <script lang='ts'>
 
@@ -41,6 +38,4 @@ export default {
     name: 'FilesBreadcrumbs',
 }
 </script>
-<style lang='less' scoped>
-
-</style>
+<style lang='less' scoped></style>

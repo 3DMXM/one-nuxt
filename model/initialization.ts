@@ -6,6 +6,9 @@ export function initialization() {
     if (token.accessToken === "") {
         console.log('开始初始化!!!')
 
+        // console.log(process.env);
+
+
         GetToken((err, res) => {
             if (!err && res.length > 0) {
                 token.accessToken = res[0].accessToken;

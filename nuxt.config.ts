@@ -11,6 +11,9 @@ export default defineNuxtConfig({
     //     host: 'localhost',
     //     url: 'http://localhost:3003'
     // },
+    devServer: {
+        port: process.env.server_post || 3000,
+    },
     build: {
         transpile: ['vuetify'],
     },
@@ -36,7 +39,7 @@ export default defineNuxtConfig({
     ],
     runtimeConfig: {
         public: {
-            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://pan.aoe.top',
+            siteUrl: process?.env?.NUXT_PUBLIC_SITE_URL || 'https://pan.aoe.top',
             siteName: process.env.site_siteName,
             siteDescription: '小莫的网盘, 分享一些能用得上的东西~',
             language: 'zh', // prefer more explicit language codes like `en-AU` over `en`

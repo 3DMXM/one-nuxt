@@ -4,8 +4,16 @@ import { GetFileList } from '@/server/OneDrive/cache'
 import { initialization } from '@/model/initialization'
 
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event: any) => {
     const { path } = await readBody(event)
+
+    // if (process.client) {
+    //     return {
+    //         code: '00',
+    //         msg: "获取成功",
+    //         items: [],
+    //     }
+    // }
 
     initialization()
 
