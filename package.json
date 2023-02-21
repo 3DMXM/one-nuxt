@@ -6,7 +6,7 @@
         "devPan": "npx nuxi dev --dotenv .env.pan",
         "devGame": "npx nuxi dev --dotenv .env.game",
         "preview": "npx nuxi preview --dotenv .env.pan",
-        "runPan": "PORT=3333 npx nuxi preview --dotenv .env.pan",
+        "runPan": "PORT=4000 npx nuxi preview --dotenv .env.pan",
         "runGame": "npx nuxi preview --dotenv .env.game"
     },
     "devDependencies": {

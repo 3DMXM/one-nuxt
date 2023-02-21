@@ -56,6 +56,7 @@ function remove(arr: any[], val: any) {
 </script>
 <template>
     <div class="list">
+        <GoogleAd></GoogleAd>
         <v-row v-if="Loading" class="loading">
             <v-btn class="loading-btn" variant="text" :loading="true">
                 <template v-slot:loader>
@@ -70,8 +71,7 @@ function remove(arr: any[], val: any) {
             <div class="list-body">
                 <v-list lines="one" bg-color="transparent">
                     <!-- <v-list-subheader inset>文件</v-list-subheader> -->
-                    <v-list-item v-if="path.length > 0" prepend-icon="mdi-arrow-up" :to="parent"
-                        title="..."></v-list-item>
+                    <v-list-item v-if="path.length > 0" prepend-icon="mdi-arrow-up" :to="parent" title="..."></v-list-item>
                     <FilesItem v-for="item in list" :key="item.id" :item="item"></FilesItem>
                 </v-list>
             </div>

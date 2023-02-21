@@ -6,14 +6,7 @@ export default defineNuxtConfig({
         '@mdi/font/css/materialdesignicons.css',
         'assets/main.less'
     ],
-    // devServer: {
-    //     port: parseInt(process.env.post as string) || 3000,
-    //     host: 'localhost',
-    //     url: 'http://localhost:3003'
-    // },
-    devServer: {
-        port: process.env.server_post || 3000,
-    },
+
     build: {
         transpile: ['vuetify'],
     },
