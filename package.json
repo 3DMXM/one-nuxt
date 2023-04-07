@@ -7,7 +7,7 @@
         "devGame": "npx nuxi dev --dotenv .env.game",
         "preview": "npx nuxi preview --dotenv .env.pan",
         "runPan": "PORT=4000 npx nuxi preview --dotenv .env.pan",
-        "runGame": "npx nuxi preview --dotenv .env.game"
+        "runGame": "PORT=4001 npx nuxi preview --dotenv .env.game"
     },
     "devDependencies": {
         "@types/marked": "^4.0.8",
