@@ -13,7 +13,7 @@ export function SaveToken(
     let scopesStr = scopes.join(" ");
     let sql = `select * from token`;
     let connection = fconnection()
-    connection.query(sql, function (err, result) {
+    connection.query(sql, function (err, result: any) {
         if (!err && result.length > 0) {
             sql = `update token set accessToken = ?, scopes = ?, refreshToken = ?, time = ?, expiresOn = ? where id = 1`;
         } else {
@@ -32,7 +32,7 @@ export function SaveToken(
 export function GetToken(callback: ICallback) {
     let sql = "select * from token";
     let connection = fconnection()
-    connection.query(sql, function (err, result) {
+    connection.query(sql, function (err, result: any) {
         if (!err && result.length > 0 && result[0].refreshToken) {
             try {
                 // 通过expiresOn判断是否过期 expiresOn 为 1655114196 格式            
@@ -97,7 +97,7 @@ export async function GetFileList(parent: string) {
     let sql = `select * from file_items ${where}`;
     let connection = fconnection()
     return new Promise<IFileList[]>((resolve, reject) => {
-        connection.query(sql, function (err, result) {
+        connection.query(sql, function (err, result: any) {
             if (result?.length > 0) {
                 // 通过 file_up_time 判断是否过期 过期时间 2小时
                 let time = new Date();
@@ -158,7 +158,7 @@ export function SaveFileData(file_id: string, data: string, callback: ICallback)
      */
     let sql = `select * from file_data where file_fid = ?`;
     let connection = fconnection()
-    connection.query(sql, [file_id], function (err, result) {
+    connection.query(sql, [file_id], function (err, result: any) {
         if (result.length > 0) {
             // 更新
             let sql = `update file_data set file_data = ?, file_time = ? where file_fid = ?`;
@@ -183,7 +183,7 @@ export async function _GetFileData(file_id: string) {
     let sql = `select * from file_data where file_fid = ?`;
     let connection = fconnection()
     return new Promise<string>((resolve, reject) => {
-        connection.query(sql, [file_id], function (err, result) {
+        connection.query(sql, [file_id], function (err, result: any) {
             if (result.length > 0) {
                 // 通过 file_time 判断是否过期 过期时间 3天
                 let time = new Date().getDate();
