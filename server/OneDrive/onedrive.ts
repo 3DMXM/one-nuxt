@@ -93,7 +93,7 @@ export function GetChildren(path: string, callback: ICallback) {
             // 只需要取 name、size、id、folder.childCount、lastModifiedDateTime
             let Children: any[] = [];
             if (ChildrenList?.length > 0) {
-                console.log(ChildrenList);
+                // console.log(ChildrenList);
 
                 ChildrenList.forEach(function (item) {
                     let ext = null;
@@ -115,7 +115,7 @@ export function GetChildren(path: string, callback: ICallback) {
                         file_size: item.size,
                         file_downloadUrl: item['@microsoft.graph.downloadUrl'] || "",
                         childCount: item.folder || 0,
-                        lastModifiedDateTime: item.lastModifiedDateTime,
+                        lastModifiedDateTime: new Date(item.lastModifiedDateTime),
                         file_up_time: GetNowTime(),
                     }
                     if (item.folder) {
