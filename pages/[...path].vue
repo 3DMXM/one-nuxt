@@ -17,7 +17,6 @@ useSeoMeta({
 </script>
 <template>
     <v-container>
-        <FilesBreadcrumbs></FilesBreadcrumbs>
         <v-no-ssr>
             <FilesList></FilesList>
         </v-no-ssr>

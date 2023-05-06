@@ -14,7 +14,7 @@ let year = new Date().getFullYear()
     <v-container fluid>
         <v-divider></v-divider>
         <v-container class="footer">
-            <p class="copyright">小莫网盘 @2020-2023 如果网盘中有包含侵犯您权利的内容，请联系邮箱xm@xmsky.onmicrosoft.com</p>
+            <p class="copyright">小莫网盘 @2020-2023 如果网盘中有包含侵犯您权利的内容, 请联系邮箱xm@aoe.top</p>
             <p class="footer-link">
                 <a href="https://blog.aoe.top/notes/490" target="_blank">下载速度慢提速方案</a>
                 <a href="https://blog.aoe.top/notes/497" target="_blank">下载提示需要登录?</a>

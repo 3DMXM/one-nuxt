@@ -4,6 +4,7 @@
 const route = useRoute()
 let path = computed(() => route.params.path as string[])
 
+console.log(path.value);
 
 
 let item = computed(() => {
@@ -11,6 +12,11 @@ let item = computed(() => {
         title: "首页",
         to: '/'
     }]
+
+    if (!path.value) {
+        return items
+    }
+
     for (let i = 0; i < path.value.length; i++) {
         let to = ''
         for (let j = 0; j <= i; j++) {

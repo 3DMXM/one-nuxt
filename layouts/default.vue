@@ -2,15 +2,27 @@
 
 </script>
 <template>
-    <v-app>
+    <v-card>
         <SeoKit />
-        <NuxtLoadingIndicator></NuxtLoadingIndicator>
-        <v-main class="layout">
-            <BaseHeader></BaseHeader>
+        <!-- <v-main class="layout">
             <router-view></router-view>
             <BaseFooter></BaseFooter>
-        </v-main>
-    </v-app>
+        </v-main> -->
+
+        <v-layout>
+            <NuxtLoadingIndicator></NuxtLoadingIndicator>
+            <BaseLeftMenu></BaseLeftMenu>
+            <BaseHeader></BaseHeader>
+            <v-main style="min-height: 100vh;">
+                <router-view v-slot="{ Component }">
+                    <keep-alive>
+                        <component :is="Component" />
+                    </keep-alive>
+                </router-view>
+                <BaseFooter></BaseFooter>
+            </v-main>
+        </v-layout>
+    </v-card>
 </template>
 <script lang='ts'>
 
@@ -18,6 +30,4 @@ export default {
     name: 'layoutsDefault',
 }
 </script>
-<style lang='less' scoped>
-
-</style>
+<style lang='less' scoped></style>

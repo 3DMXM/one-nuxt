@@ -4,6 +4,9 @@ export const useMain = defineStore('main', {
         wx: 'https://mod.3dmgame.com/static/upload/mod/202302/MOD63eb01f0e3e14.png@webp',
         zfb: 'https://mod.3dmgame.com/static/upload/mod/202302/MOD63eb01f0e2912.png@webp',
         logo: 'https://mod.3dmgame.com/static/upload/mod/202211/MOD6386ccf455c06.png@webp',
+        leftMenu: true,
+        leftMenuRail: false,
+
     }),
 
     getters: {

@@ -11,6 +11,8 @@ export function initialization() {
 
         GetToken((err, res) => {
             if (!err && res.length > 0) {
+                console.log(res);
+
                 token.accessToken = res[0].accessToken;
                 token.refreshToken = res[0].refreshToken;
                 token.expiresOn = res[0].expiresOn;

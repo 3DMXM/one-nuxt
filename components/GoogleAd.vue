@@ -21,5 +21,6 @@ export default {
 <style lang='less' scoped>
 .google-ad {
     padding: 1rem 0;
+    text-align: center;
 }
 </style>

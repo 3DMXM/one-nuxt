@@ -92,7 +92,9 @@ export function GetChildren(path: string, callback: ICallback) {
             let ChildrenList: any[] = jsonData.value;
             // 只需要取 name、size、id、folder.childCount、lastModifiedDateTime
             let Children: any[] = [];
-            if (ChildrenList) {
+            if (ChildrenList?.length > 0) {
+                console.log(ChildrenList);
+
                 ChildrenList.forEach(function (item) {
                     let ext = null;
                     if (!item.folder) {
@@ -126,7 +128,7 @@ export function GetChildren(path: string, callback: ICallback) {
                     callback(err, Children);
                 })
             } else {
-                callback(jsonData.error.message, Children);
+                callback(jsonData, Children);
             }
         } else {
             callback(err, null);
