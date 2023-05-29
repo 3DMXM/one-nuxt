@@ -38,4 +38,5 @@ export default defineNuxtConfig({
             language: 'zh', // prefer more explicit language codes like `en-AU` over `en`
         },
     },
+    ssr: false
 })

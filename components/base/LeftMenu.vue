@@ -1,14 +1,5 @@
 <script lang='ts' setup>
 
-/**
- *     { text: '首页', to: '/', target: false },
-    { text: '云网盘', to: 'https://pan.aoe.top', target: false },
-    { text: '游戏库', to: 'https://game.aoe.top', target: false },
-    { text: '博客园', to: 'https://blog.aoe.top', target: true },
-    { text: '云签到', to: 'https://tb.aoe.top', target: true },
-    { text: '投喂小莫', to: '/donate', target: false },
- */
-
 let lists = [
     {
         title: '首页',
@@ -50,9 +41,11 @@ let lists = [
 
 const main = useMain()
 
+
+
 </script>
 <template>
-    <v-navigation-drawer v-model="main.leftMenu" :rail="main.leftMenuRail" permanent class="left-menu">
+    <v-navigation-drawer v-model="main.leftMenu" :rail="main.leftMenuRail" class="left-menu">
         <v-list>
             <v-list-item v-for="item in lists" :key="item.path" :href="item.path" :prepend-icon="item.icon"
                 :title="item.title" :target="item.target ? '_blank' : '_self'">

@@ -1,6 +1,7 @@
 <script lang='ts' setup>
-
 const route = useRoute()
+
+
 let path = computed(() => route.params.path as string[])
 
 let title = computed(() => {
@@ -13,6 +14,11 @@ let title = computed(() => {
 useSeoMeta({
     title: title
 })
+
+
+
+
+
 
 </script>
 <template>

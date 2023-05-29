@@ -2,6 +2,8 @@
 
 
 const route = useRoute()
+const main = useMain()
+
 let path = computed(() => route.params.path as string[])
 
 console.log(path.value);
@@ -34,7 +36,7 @@ let item = computed(() => {
 <template>
     <v-breadcrumbs :items="item" divider=">">
         <template v-slot:prepend>
-            <v-icon size="small" icon="mdi-home"></v-icon>
+            <v-icon size="small" icon="mdi-menu" @click="main.leftMenu = !main.leftMenu"></v-icon>
         </template>
     </v-breadcrumbs>
 </template>
