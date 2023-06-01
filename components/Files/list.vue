@@ -56,7 +56,7 @@ function remove(arr: any[], val: any) {
 </script>
 <template>
     <div class="list">
-        <GoogleAd></GoogleAd>
+        <GoogleAd :key="$route.path"></GoogleAd>
         <v-row v-if="Loading" class="loading">
             <v-btn class="loading-btn" variant="text" :loading="true">
                 <template v-slot:loader>

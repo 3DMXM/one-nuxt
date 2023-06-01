@@ -52,7 +52,7 @@ const main = useMain()
             </v-list-item>
         </v-list>
         <template v-slot:append>
-            <GoogleAd></GoogleAd>
+            <GoogleAd :key="$route.path"></GoogleAd>
             <v-list>
                 <v-list-item @click="main.leftMenuRail = !main.leftMenuRail"
                     :prepend-icon="main.leftMenuRail ? 'mdi-chevron-double-right' : 'mdi-chevron-double-left'">
