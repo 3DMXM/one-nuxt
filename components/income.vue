@@ -15,7 +15,7 @@ onMounted(() => {
 <script lang='ts'>
 
 export default {
-    name: 'GoogleAd',
+    name: 'income',
 }
 </script>
 <style lang='less' scoped>

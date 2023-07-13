@@ -3,6 +3,7 @@
     "scripts": {
         "build": "nuxt build",
         "dev": "nuxt dev",
+        "dev2": "vercel env pull .env.development.local",
         "devPan": "npx nuxi dev --dotenv .env.pan",
         "devGame": "npx nuxi dev --dotenv .env.game",
         "preview": "npx nuxi preview --dotenv .env.pan",
