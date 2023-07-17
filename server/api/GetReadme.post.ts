@@ -1,11 +1,20 @@
-import { _GetFileData } from '@/server/OneDrive/cache'
+import { GetFileData } from '@/server/OneDrive/onedrive'
+import { kv } from "@vercel/kv";
 
 export default defineEventHandler(async (event) => {
 
-    // let { file_id } = req.body;
     const { fid } = await readBody(event)
 
-    let data = await _GetFileData(fid)
+    console.log("fid:", fid);
+
+
+    let data = await kv.get<any[]>(fid);
+    if (!data) {
+        console.log(`没有内容, 重新获取`);
+        data = await GetFileData(fid)
+    }
+
+    // console.log(`data:`, data);
 
 
     return {

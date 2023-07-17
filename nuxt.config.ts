@@ -6,12 +6,11 @@ export default defineNuxtConfig({
         '@mdi/font/css/materialdesignicons.css',
         'assets/main.less'
     ],
-
     build: {
         transpile: ['vuetify'],
     },
     modules: [
-        'nuxt-og-image',
+        // 'nuxt-og-image',
         [
             '@pinia/nuxt',
             {
@@ -28,14 +27,16 @@ export default defineNuxtConfig({
         dirs: ['./stores'],
     },
     extends: [
-        'nuxt-seo-kit'
+        // 'nuxt-seo-kit'
     ],
     runtimeConfig: {
         public: {
             siteUrl: process?.env?.NUXT_PUBLIC_SITE_URL || 'https://pan.aoe.top',
-            siteName: process.env.site_siteName,
+            siteName: process?.env?.site_siteName || '小莫的云网盘',
             siteDescription: '小莫的网盘, 分享一些能用得上的东西~',
             language: 'zh', // prefer more explicit language codes like `en-AU` over `en`
+            onedrive_root: process?.env?.onedrive_root || '/public',
+            refreshToken: process?.env?.refreshToken || '',
         },
     },
     ssr: false

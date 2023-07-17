@@ -1,19 +1,13 @@
 // /api/GetItem
 import { SeverConfig } from '@/model/SeverConfig'
-import { GetFileList } from '@/server/OneDrive/cache'
+// import { GetFileList } from '@/server/OneDrive/cache'
+import { GetChildren } from '@/server/OneDrive/onedrive'
 import { initialization } from '@/model/initialization'
+import { kv } from "@vercel/kv";
 
 
 export default defineEventHandler(async (event: any) => {
     const { path } = await readBody(event)
-
-    // if (process.client) {
-    //     return {
-    //         code: '00',
-    //         msg: "获取成功",
-    //         items: [],
-    //     }
-    // }
 
     initialization()
 
@@ -24,18 +18,22 @@ export default defineEventHandler(async (event: any) => {
         parent += "/" + path.join("/")
     }
 
-    console.log(parent);
-    // console.log("accessToken", SeverConfig.token.accessToken);
+    console.log("parent:", parent);
 
-    let item = await GetFileList(parent).catch((err) => {
-        console.log(err);
-        return []
-    })
+    let data = await kv.get<any[]>(parent);
+
+    // let data = []
+    if (!data) {
+        console.log(`没有内容, 重新获取`);
+        data = await GetChildren(parent)
+    }
+
+    // console.log(`data:`, data);
 
     return {
         code: '00',
         msg: "获取成功",
-        items: item,
+        items: data,
     }
 })
 

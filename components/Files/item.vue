@@ -78,8 +78,8 @@ function file_path(name: string) {
                 append-icon="mdi-folder-open-outline" :to="file_path(item.file_name)">
                 打开
             </v-btn>
-            <v-btn variant="text" v-else :loading="Loading" @click="Loading = true" append-icon="mdi-download"
-                color="#4FC3F7" :href="item.file_downloadUrl" target="_blank">下载</v-btn>
+            <v-btn variant="text" v-else append-icon="mdi-download" color="#4FC3F7" :href="item.file_downloadUrl"
+                target="_blank">下载</v-btn>
         </template>
     </v-list-item>
 </template>
