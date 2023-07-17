@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         transpile: ['vuetify'],
     },
     modules: [
-        // 'nuxt-og-image',
+        'nuxt-og-image',
         [
             '@pinia/nuxt',
             {
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         dirs: ['./stores'],
     },
     extends: [
-        // 'nuxt-seo-kit'
+        'nuxt-seo-kit'
     ],
     runtimeConfig: {
         public: {

@@ -3,7 +3,7 @@
 </script>
 <template>
     <v-card>
-        <!-- <SeoKit /> -->
+        <SeoKit />
         <v-layout>
             <NuxtLoadingIndicator></NuxtLoadingIndicator>
             <BaseLeftMenu></BaseLeftMenu>
