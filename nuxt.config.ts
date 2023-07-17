@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     },
     modules: [
         'nuxt-og-image',
+        "nuxt-vercel-analytics",
         [
             '@pinia/nuxt',
             {
@@ -39,5 +40,5 @@ export default defineNuxtConfig({
             refreshToken: process?.env?.refreshToken || '',
         },
     },
-    ssr: false
+    // ssr: false
 })
