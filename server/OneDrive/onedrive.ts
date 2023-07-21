@@ -124,10 +124,11 @@ export async function GetChildren(path: string): Promise<any[]> {
                         Children.push(child);
                     });
 
+
                     // 写入缓存
                     kv.set(path, Children, {
                         // 2 小时
-                        ex: 60 * 60 * 2
+                        ex: 60 * 60 * 1
                     });
 
                     resolve(Children)
