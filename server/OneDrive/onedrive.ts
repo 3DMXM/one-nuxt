@@ -2,6 +2,7 @@
 import request from 'request';
 import { SeverConfig } from '@/model/SeverConfig'
 import { GetNowTime } from '@/model/main'
+import { Cache } from '@/server/OneDrive/cache'
 import axios from 'axios'
 import { kv } from "@vercel/kv";
 
@@ -124,12 +125,10 @@ export async function GetChildren(path: string): Promise<any[]> {
                         Children.push(child);
                     });
 
-
-                    // 写入缓存
-                    kv.set(path, Children, {
-                        // 2 小时
+                    Cache.set(path, Children, {
+                        // 1 小时
                         ex: 60 * 60 * 1
-                    });
+                    })
 
                     resolve(Children)
                 } else {
@@ -161,7 +160,7 @@ export async function GetFileData(file_id: string): Promise<any[]> {
         request(options, function (err, response, body) {
             if (!err) {
                 // 写入缓存
-                kv.set(file_id, body);
+                Cache.set(file_id, body);
 
                 resolve(body)
             } else {
