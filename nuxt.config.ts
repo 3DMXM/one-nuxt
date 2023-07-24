@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     modules: [
         'nuxt-og-image',
         "nuxt-vercel-analytics",
+        "nuxt-gtag",
         [
             '@pinia/nuxt',
             {
@@ -40,5 +41,8 @@ export default defineNuxtConfig({
             refreshToken: process?.env?.refreshToken || '',
         },
     },
-    // ssr: false
+    gtag: {
+        id: 'G-L04H04RSS7'
+    }
+
 })
