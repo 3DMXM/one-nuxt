@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     build: {
         transpile: ['vuetify'],
     },
+    ssr: process.env.NODE_ENV != 'development',
     modules: [
         'nuxt-og-image',
         "nuxt-vercel-analytics",
