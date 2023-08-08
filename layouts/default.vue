@@ -1,8 +1,8 @@
 <script lang='ts' setup>
 
 
-const permissions = useCookie<boolean>('permissions')
-
+// const permissions = useCookie<boolean>('permissions')
+const permissions = ref(true)
 let loading = ref(false)
 
 function checking() {
