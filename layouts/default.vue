@@ -50,5 +50,9 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    h1 {
+        margin: 1rem 0;
+    }
 }
 </style>
