@@ -32,6 +32,7 @@ function checking() {
         </v-layout>
     </v-card>
     <div v-else class="login">
+        <Income :key="$route.path"></Income>
         <h1>请完成下方验证以确认你不是机器人</h1>
         <v-btn @click="checking" :loading="loading">点击开始验证</v-btn>
     </div>
