@@ -8,31 +8,31 @@ let lists = [
         target: false
     },
     {
-        title: '云网盘',
+        title: '网盘',
         icon: "mdi-cloud-download-outline",
         path: 'https://pan.aoe.top',
         target: false
     },
     {
-        title: "游戏库",
+        title: "游戏",
         icon: "mdi-controller",
         path: "https://game.aoe.top",
         target: false
     },
     {
-        title: '博客园',
+        title: '博客',
         icon: "mdi-post-outline",
         path: 'https://blog.aoe.top',
         target: true
     },
     {
-        title: '云签到',
+        title: '画廊',
         icon: "mdi-cloud-check-outline",
-        path: 'https://tb.aoe.top',
+        path: 'https://gallery.aoe.top',
         target: true
     },
     {
-        title: '投喂小莫',
+        title: '投喂',
         icon: "mdi-heart",
         path: '/donate',
         target: false,
