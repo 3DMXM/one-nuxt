@@ -26,12 +26,6 @@ let lists = [
         target: true
     },
     {
-        title: '画廊',
-        icon: "mdi-cloud-check-outline",
-        path: 'https://gallery.aoe.top',
-        target: true
-    },
-    {
         title: '投喂',
         icon: "mdi-heart",
         path: '/donate',
